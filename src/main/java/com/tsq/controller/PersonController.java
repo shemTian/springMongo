@@ -18,24 +18,24 @@ public class PersonController {
 	PersonService personService;
 	@RequestMapping("/getPerson")
 	public String getPerson(Model model,HttpServletRequest request){
-		model.addAttribute("personList", personService.getPersonPage(1, 10));
+		model.addAttribute("personList", personService.getPersonPage(0, 10));
 		return "person/pageList";
 	}
 	@RequestMapping("/modifyPerson")
 	public String modifyPerson(Model model,HttpServletRequest request,@ModelAttribute Person person){
 		personService.modifyPerson(person);
-		model.addAttribute("personList", personService.getPersonPage(1, 10));
+		model.addAttribute("personList", personService.getPersonPage(0, 10));
 		return "person/pageList";
 	}
 	@RequestMapping("/destoryPerson")
 	public String destoryPerson(Model model,HttpServletRequest request){
-		model.addAttribute("personList", personService.getPersonPage(1, 10));
+		model.addAttribute("personList", personService.getPersonPage(0, 10));
 		return "person/pageList";
 	}
 	@RequestMapping("/newPerson")
 	public String newPerson(Model model,HttpServletRequest request,Person person){
 		personService.createPerson(person);
-		model.addAttribute("personList", personService.getPersonPage(1, 10));
+		model.addAttribute("personList", personService.getPersonPage(0, 10));
 		return "person/pageList";
 	}
 	@RequestMapping("/regist")
