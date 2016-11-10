@@ -33,6 +33,9 @@
                 <prop key="org.springframework.web.multipart.MaxUploadSizeExceededException">/recommend/error_fileupload</prop>  
             </props>  
         </property>  
+        <property name="defaultErrorView">
+        	<value>error/5xx</value>
+        </property>
     </bean>  
     	
     <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">

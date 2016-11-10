@@ -34,12 +34,17 @@ public class PersonController {
 	}
 	@RequestMapping("/newPerson")
 	public String newPerson(Model model,HttpServletRequest request,Person person){
-		personService.createPerson(person);
-		model.addAttribute("personList", personService.getPersonPage(0, 10));
-		return "person/pageList";
+		throw new RuntimeException("2");
+//		personService.createPerson(person);
+//		model.addAttribute("personList", personService.getPersonPage(0, 10));
+//		return "person/pageList";
 	}
 	@RequestMapping("/regist")
 	public String regist(Model model,HttpServletRequest request){
 		return "person/regist";
+	}
+	@RequestMapping("/signIn")
+	public String signIn(Model model,HttpServletRequest request){
+		return "person/sign";
 	}
 }

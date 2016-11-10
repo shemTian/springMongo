@@ -26,6 +26,10 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>spring-mvc</servlet-name>
+		<url-pattern>/index</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>spring-mvc</servlet-name>
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
 	<!-- 字符集过滤器 -->
@@ -45,7 +49,13 @@
 		<filter-name>characterEncodingFilter</filter-name>
 		<url-pattern>*.do</url-pattern>
 	</filter-mapping>
+	
+	<error-page>
+　　		<error-code>404</error-code>
+　　		<location>/Desert.jpg</location>
+　　</error-page>
+
   <welcome-file-list>
-	<welcome-file></welcome-file>
+	<welcome-file>index</welcome-file>
   </welcome-file-list>
 </web-app>
