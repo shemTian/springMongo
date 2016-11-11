@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>登录</title>
+    <title></title>
 
     <!-- Bootstrap core CSS -->
     <link href="<%=request.getContextPath() %>/resource/css/bootstrap/bootstrap.min.css" rel="stylesheet">
@@ -36,6 +36,9 @@
       	</div>
       </div>
     </div>
- 
+ 	<button type="button" class="btn btn-default btn-lg">
+    <span class="glyphicon glyphicon-user"></span>
+    User
+</button>
   </body>
 </html>
