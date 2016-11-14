@@ -39,9 +39,9 @@ public class PersonController {
 //		model.addAttribute("personList", personService.getPersonPage(0, 10));
 //		return "person/pageList";
 	}
-	@RequestMapping("/regist")
+	@RequestMapping("/register")
 	public String regist(Model model,HttpServletRequest request){
-		return "person/regist";
+		return "person/register";
 	}
 	@RequestMapping("/signIn")
 	public String signIn(Model model,HttpServletRequest request){

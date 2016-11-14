@@ -18,59 +18,59 @@ public abstract class MongoBaseDao<T> {
 	
 	
 	public void saveEntity(T t){
-		logger.info("[Mongo Dao ]==:"+t);
+		logger.debug("[Mongo Dao ]==:"+t);
 		this.mongoTemplate.save(t);
 	}
 	public void updateFirst(Query query,Update update){
-		logger.info("[Mongo Dao ]updateFirst:query(" + query + "),update(" + update + ")");
+		logger.debug("[Mongo Dao ]updateFirst:query(" + query + "),update(" + update + ")");
         this.mongoTemplate.updateFirst(query, update, this.getEntityClass());
     }
     
     public void updateMulti(Query query, Update update){
-    	logger.info("[Mongo Dao ]updateMulti:query(" + query + "),update(" + update + ")");
+    	logger.debug("[Mongo Dao ]updateMulti:query(" + query + "),update(" + update + ")");
         this.mongoTemplate.updateMulti(query, update, this.getEntityClass());
     }
     
     public void updateInser(Query query, Update update){
-    	logger.info("[Mongo Dao ]updateInser:query(" + query + "),update(" + update + ")");
+    	logger.debug("[Mongo Dao ]updateInser:query(" + query + "),update(" + update + ")");
         this.mongoTemplate.upsert(query, update, this.getEntityClass());
     }
 	public T findById(String id){
 		Query query = new Query();
         Criteria criteria = Criteria.where("_id").is(id);
         query.addCriteria(criteria);
-        logger.info("[Mongo Dao ]==:" + query);
+        logger.debug("[Mongo Dao ]==:" + query);
         return this.mongoTemplate.findOne(query, this.getEntityClass());
 	}
 	public List<T> queryList(Query query){
-		logger.info("[Mongo Dao ]queryList:" + query);
+		logger.debug("[Mongo Dao ]queryList:" + query);
         return this.mongoTemplate.find(query, this.getEntityClass());
     }
 	public T queryOne(Query query){
-		logger.info("[Mongo Dao ]queryOne:" + query);
+		logger.debug("[Mongo Dao ]queryOne:" + query);
         return this.mongoTemplate.findOne(query, this.getEntityClass());
     }
 	public List<T> getPage(int start, int size){
 		Query query = new Query();
         query.skip(start);
         query.limit(size);
-        logger.info("[Mongo Dao ]queryPage:" + query + "(" + start +"," + size +")");
+        logger.debug("[Mongo Dao ]queryPage:" + query + "(" + start +"," + size +")");
         List<T> lists = this.mongoTemplate.find(query, this.getEntityClass());
         return lists;
     }
 	public Long getPageCount(Query query){
-		logger.info("[Mongo Dao ]queryPageCount:" + query);
+		logger.debug("[Mongo Dao ]queryPageCount:" + query);
         return this.mongoTemplate.count(query, this.getEntityClass());
     }
 	public void delete(T t){
-		logger.info("[Mongo Dao ]delete:" + t);
+		logger.debug("[Mongo Dao ]delete:" + t);
         this.mongoTemplate.remove(t);
     }
 	public void deleteById(String id) {
-        Criteria criteria = Criteria.where("_id").in(id);
+        Criteria criteria = Criteria.where("_id").is(id);
         if(null!=criteria){
             Query query = new Query(criteria);
-            logger.info("[Mongo Dao ]deleteById:" + query);
+            logger.debug("[Mongo Dao ]deleteById:" + query);
             if(null!=query && this.queryOne(query)!=null){
                 this.delete(this.queryOne(query));
             }
