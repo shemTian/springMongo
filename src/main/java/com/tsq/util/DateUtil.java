@@ -478,11 +478,11 @@ public class DateUtil {
     public static Integer getTimeDifferenceToday(Date startDate){
     	return getTimeDifference(startDate,new Date());
     }
-	public static void main(String[] args) throws Throwable{
+	/*public static void main(String[] args) throws Throwable{
 	    Date date = DateUtil.strToDate("2015-08-21 12:00:00");
 	    System.out.println(date.after(new Date()));
 		System.out.println("ssss"+getTimeDifferenceToday(date));
 		System.out.println(calDate("2014-05-01",0,0,-2));
 		System.out.println(DateUtil.calDate(new Date(),0,0,-1,DateUtil.DEFAULT_PATTERN_YMD));
-	}
+	}*/
 }
