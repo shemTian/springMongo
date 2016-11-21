@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="<%=request.getContextPath() %>/favicon.png">
 
     <title></title>
 
@@ -32,13 +32,9 @@
       <div class="row">
       <!--  class="col-md-12" -->
       	<div>
-      		<img src="../lei.png" class="img-responsive center-block" alt="Responsive image"/>
+      		<img src="<%=request.getContextPath() %>/lei.png" class="img-responsive center-block" alt="Responsive image"/>
       	</div>
       </div>
     </div>
- 	<button type="button" class="btn btn-default btn-lg">
-    <span class="glyphicon glyphicon-user"></span>
-    User
-</button>
   </body>
 </html>

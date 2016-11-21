@@ -19,7 +19,7 @@ public class PersonController {
 	@RequestMapping("/getPerson")
 	public String getPerson(Model model,HttpServletRequest request){
 		model.addAttribute("personList", personService.getPersonPage(0, 10));
-		return "person/pageList";
+		return "/person/pageList";
 	}
 	@RequestMapping("/modifyPerson")
 	public String modifyPerson(Model model,HttpServletRequest request,@ModelAttribute Person person){
