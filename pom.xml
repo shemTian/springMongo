@@ -6,11 +6,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 		<packaging>war</packaging>
 		<name>mymongo</name>
-		<parent>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-parent</artifactId>
-			<version>1.4.2.RELEASE</version>
-		</parent>
+		
 		<properties>
 			<spring.version>4.3.4.RELEASE</spring.version>
 			<mongo.version>3.0.3</mongo.version>
@@ -18,15 +14,28 @@
 			<excel-poi>3.9</excel-poi>
 		</properties>
 		<dependencies>
+			<!-- spring-boot 添加
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-web</artifactId>
+				<version>1.4.2.RELEASE</version>
 			</dependency>
 			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-core</artifactId>
+			<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-tomcat</artifactId>
+				<version>1.4.2.RELEASE</version>
+				<scope>provided</scope>
 			</dependency>
-
+			<dependency>
+				<groupId>org.apache.tomcat.embed</groupId>
+				<artifactId>tomcat-embed-jasper</artifactId>
+				<version>8.5.6</version>
+				<scope>provided</scope>
+			</dependency> -->
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>jstl</artifactId>
+			</dependency>
 			<dependency>
 				<groupId>org.springframework.data</groupId>
 				<artifactId>spring-data-mongodb</artifactId>
@@ -38,7 +47,12 @@
 				</dependency> -->
 
 			<!-- springframework begin -->
-
+			
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-expression</artifactId>

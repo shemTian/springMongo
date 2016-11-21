@@ -27,9 +27,9 @@
 			expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
 	<context:property-placeholder location="classpath:mongo.properties" />
-	<!-- 定义mongo对象，对应的是mongodb官方jar包中的Mongo，replica-set设置集群副本的ip地址和端口 -->
-    <mongo:mongo id="mongo" replica-set="${mongo.hostport}">
-        <!-- 一些连接属性的设置  -->    
+	<!-- 定义mongo对象，对应的是mongodb官方jar包中的Mongo，replica-set设置集群副本的ip地址和端口
+    <mongo:mongo id="mongo" replica-set="${mongo.hostport}">	-->
+        <!-- 一些连接属性的设置  
         <mongo:options
              connections-per-host="${mongo.connectionsPerHost}"
              threads-allowed-to-block-for-connection-multiplier="${mongo.threadsAllowedToBlockForConnectionMultiplier}"
@@ -43,6 +43,14 @@
              write-timeout="0"
              write-fsync="true"/>        
     </mongo:mongo>
+    -->    
+    <mongo:mongo-client replica-set="${mongo.hostport}">
+    	<mongo:client-options connections-per-host="${mongo.connectionsPerHost}"
+		   threads-allowed-to-block-for-connection-multiplier="${mongo.threadsAllowedToBlockForConnectionMultiplier}"
+		   connect-timeout="${mongo.connectTimeout}"
+		   socket-timeout="3000"
+		   write-concern="0" />
+    </mongo:mongo-client>
 	<!-- 流星（阅后即焚） -->
 	<mongo:db-factory id="mongoDbFactory" dbname="meteor" mongo-ref="mongo"/>
 
