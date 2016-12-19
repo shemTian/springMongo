@@ -3,7 +3,7 @@
 		<modelVersion>4.0.0</modelVersion>
 		<groupId>com.tsq</groupId>
 		<artifactId>mongo</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.0.1</version>
 		<packaging>war</packaging>
 		<name>mymongo</name>
 		
@@ -103,6 +103,11 @@
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-context-support</artifactId>
 				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+			    <groupId>org.slf4j</groupId>
+			    <artifactId>slf4j-log4j12</artifactId>
+			    <version>1.7.21</version>
 			</dependency>
 			<dependency>
 				<groupId>log4j</groupId>
